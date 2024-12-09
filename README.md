@@ -1,6 +1,3 @@
-以下是为你的 GitHub 项目 **BLOOD_PRESSURE** 生成的完整 `README.md` 文件，其中已经根据你的用户名 **Henry-THT** 进行了替换，并去掉了截图部分：
-
-```markdown
 # BLOOD_PRESSURE
 
 A simple web application for recording, analyzing, and tracking blood pressure levels. Built with Python (Flask framework) and SQLite database, this project demonstrates a complete workflow of data storage, processing, and display.
