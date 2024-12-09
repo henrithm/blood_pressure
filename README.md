@@ -1,3 +1,6 @@
+以下是为你的 GitHub 项目 **BLOOD_PRESSURE** 生成的完整 `README.md` 文件，其中已经根据你的用户名 **Henry-THT** 进行了替换，并去掉了截图部分：
+
+```markdown
 # BLOOD_PRESSURE
 
 A simple web application for recording, analyzing, and tracking blood pressure levels. Built with Python (Flask framework) and SQLite database, this project demonstrates a complete workflow of data storage, processing, and display.
@@ -42,84 +45,104 @@ Follow these steps to set up and run the project:
    ```bash
    git clone https://github.com/Henry-THT/BLOOD_PRESSURE.git
    cd BLOOD_PRESSURE
+   ```
 
-	2.	Create a Virtual Environment
+2. **Create a Virtual Environment**  
+   ```bash
+   python -m venv env
+   source env/bin/activate  # On Windows: env\Scripts\activate
+   ```
 
-python -m venv env
-source env/bin/activate  # On Windows: env\Scripts\activate
+3. **Install Dependencies**  
+   ```bash
+   pip install flask
+   ```
 
+4. **Run the Application**  
+   ```bash
+   python app.py
+   ```
 
-	3.	Install Dependencies
+5. **Access the Application**  
+   - Open your browser and go to: `http://127.0.0.1:5000/`
 
-pip install flask
+---
 
+## How It Works
 
-	4.	Run the Application
+1. **Home Page**  
+   - Users are presented with a form to input blood pressure values (high and low).  
 
-python app.py
+2. **Analysis**  
+   - The system checks the input values:
+     - **Normal**: Systolic < 140 and Diastolic < 90.  
+     - **High Blood Pressure**: Systolic ≥ 140 or Diastolic ≥ 90.
 
+3. **Data Storage**  
+   - Each input is stored in the SQLite database along with the result and timestamp.
 
-	5.	Access the Application
-	•	Open your browser and go to: http://127.0.0.1:5000/
+4. **History**  
+   - A section below the form displays all previous records stored in the database.
 
-How It Works
+---
 
-	1.	Home Page
-	•	Users are presented with a form to input blood pressure values (high and low).
-	2.	Analysis
-	•	The system checks the input values:
-	•	Normal: Systolic < 140 and Diastolic < 90.
-	•	High Blood Pressure: Systolic ≥ 140 or Diastolic ≥ 90.
-	3.	Data Storage
-	•	Each input is stored in the SQLite database along with the result and timestamp.
-	4.	History
-	•	A section below the form displays all previous records stored in the database.
+## Database Schema
 
-Database Schema
+The SQLite database (`data.db`) contains the following table:
 
-The SQLite database (data.db) contains the following table:
+| Column         | Type     | Description                         |  
+|----------------|----------|-------------------------------------|  
+| `id`           | INTEGER  | Primary key (auto-increment).       |  
+| `high_pressure`| INTEGER  | Systolic value (input by user).     |  
+| `low_pressure` | INTEGER  | Diastolic value (input by user).    |  
+| `result`       | TEXT     | Analysis result (Normal/High).      |  
+| `timestamp`    | TEXT     | Date and time of input.             |  
 
-Column	Type	Description
-id	INTEGER	Primary key (auto-increment).
-high_pressure	INTEGER	Systolic value (input by user).
-low_pressure	INTEGER	Diastolic value (input by user).
-result	TEXT	Analysis result (Normal/High).
-timestamp	TEXT	Date and time of input.
+---
 
-Troubleshooting
+## Troubleshooting
 
-Common Issues
+### Common Issues
 
-	1.	Database Not Found
-	•	Ensure the data.db file is created during the first run of the application.
-	•	Check the init_db function in app.py.
-	2.	Port Already in Use
-	•	If 127.0.0.1:5000 is unavailable, stop any processes using that port or run the app on a different port:
+1. **Database Not Found**  
+   - Ensure the `data.db` file is created during the first run of the application.  
+   - Check the `init_db` function in `app.py`.
 
-python app.py --port=5001
+2. **Port Already in Use**  
+   - If `127.0.0.1:5000` is unavailable, stop any processes using that port or run the app on a different port:  
+     ```bash
+     python app.py --port=5001
+     ```
 
+3. **Dependencies Not Installed**  
+   - Double-check your Python environment and ensure Flask is installed.
 
-	3.	Dependencies Not Installed
-	•	Double-check your Python environment and ensure Flask is installed.
+---
 
-Contributing
+## Contributing
 
-Contributions are welcome! If you’d like to improve this project:
+Contributions are welcome! If you'd like to improve this project:
 
-	1.	Fork the repository.
-	2.	Create a new feature branch (git checkout -b feature-name).
-	3.	Commit your changes (git commit -m "Add feature name").
-	4.	Push the branch (git push origin feature-name).
-	5.	Open a Pull Request.
+1. Fork the repository.  
+2. Create a new feature branch (`git checkout -b feature-name`).  
+3. Commit your changes (`git commit -m "Add feature name"`).  
+4. Push the branch (`git push origin feature-name`).  
+5. Open a Pull Request.
 
-License
+---
+
+## License
 
 This project is licensed under the MIT License. You are free to use, modify, and distribute this code.
 
-Contact
+---
+
+## Contact
 
 If you have any questions or feedback, feel free to reach out:
 
-	•	GitHub: Henry-THT
+- **GitHub**: [Henry-THT](https://github.com/Henry-THT)
 
-Thank you for checking out the BLOOD_PRESSURE project!
+---
+
+Thank you for checking out the **BLOOD_PRESSURE** project!
