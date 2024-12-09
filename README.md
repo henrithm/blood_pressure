@@ -57,7 +57,7 @@ Follow these steps to set up and run the project:
 
 4. **Run the Application**  
    ```bash
-   python app.py
+   python tracker.py
    ```
 
 5. **Access the Application**  
@@ -136,7 +136,7 @@ This project is licensed under the MIT License. You are free to use, modify, and
 
 ## Contact
 
-If you have any questions or feedback, feel free to reach out:
+If you have any questions or feedback, feel free to reach out.
 
 - **GitHub**: [Henry-THT](https://github.com/Henry-THT)
 
