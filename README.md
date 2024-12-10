@@ -26,60 +26,96 @@ A simple web application for recording, analyzing, and tracking blood pressure l
 
 ---
 
-## Prerequisites
-
-To run this project locally, ensure you have the following installed:
-- Python 3.7 or later
-- pip (Python package installer)
-
----
-
 ## Setup and Installation
 
 Follow these steps to set up and run the project:
 
-1. **Clone the Repository**  
+### 1. Clone the Repository  
    ```bash
    git clone https://github.com/Henry-THT/BLOOD_PRESSURE.git
    cd BLOOD_PRESSURE
    ```
 
-2. **Create a Virtual Environment**  
+### 2. Create a Virtual Environment  
    ```bash
    python -m venv env
    source env/bin/activate  # On Windows: env\Scripts\activate
    ```
 
-3. **Install Dependencies**  
+### 3. Install Dependencies  
    ```bash
    pip install flask
    ```
 
-4. **Run the Application**  
+### 4. Run the Application  
    ```bash
-   python tracker.py
+   python app.py
    ```
 
-5. **Access the Application**  
+### 5. Access the Application  
    - Open your browser and go to: `http://127.0.0.1:5000/`
 
 ---
 
-## How It Works
+## Code Creation Thoughts
 
-1. **Home Page**  
-   - Users are presented with a form to input blood pressure values (high and low).  
+This project was created as part of a Python course assignment. The main objective was to demonstrate the use of Python and Flask in building a simple web application with a database for persistent data storage. Below are the main steps and thoughts behind the code design:
 
-2. **Analysis**  
-   - The system checks the input values:
-     - **Normal**: Systolic < 140 and Diastolic < 90.  
-     - **High Blood Pressure**: Systolic ≥ 140 or Diastolic ≥ 90.
+### **1. Identifying Core Features**
+- The application needed to allow users to input blood pressure values, analyze them, and store the data.
+- A history feature was included to make the application more practical by allowing users to review their previous records.
 
-3. **Data Storage**  
-   - Each input is stored in the SQLite database along with the result and timestamp.
+### **2. Technology Choices**
+- **Flask**: Chosen for its simplicity and lightweight nature, making it ideal for a small web application.
+- **SQLite**: Used for data storage because it is easy to set up and doesn't require a separate database server.
+- **HTML (via Flask templates)**: Used for dynamic front-end content generation to keep the project simple and functional.
 
-4. **History**  
-   - A section below the form displays all previous records stored in the database.
+### **3. Code Design Approach**
+1. **Database Layer**:
+   - Created an SQLite database to store user inputs along with timestamps and the evaluation result.
+   - Used a single table with fields for systolic pressure, diastolic pressure, result, and timestamp.
+2. **Routing and Logic Layer**:
+   - Designed two routes:
+     - `/`: Displays the form and history records.
+     - `/submit`: Processes user inputs, evaluates the data, and stores the results in the database.
+   - Used a helper function to encapsulate the logic for determining whether the blood pressure is normal or high.
+3. **Dynamic Frontend**:
+   - Implemented a simple form using Flask's `render_template_string` to allow users to input their blood pressure values.
+   - Dynamically generated history records below the form for better user interaction.
+
+### **4. Learning Objectives**
+- Understand how to use Flask to handle routing and HTTP requests.
+- Learn how to interact with an SQLite database to perform basic CRUD operations.
+- Practice dynamic content rendering using Flask templates.
+- Handle user inputs securely and return meaningful results.
+
+---
+
+## Code Explanation
+
+### **Database Setup**
+- The database is initialized with a single table for storing blood pressure records. It includes:
+  - `id`: Primary key.
+  - `high_pressure` and `low_pressure`: Inputs from the user.
+  - `result`: Analysis result.
+  - `timestamp`: Time when the record was created.
+
+### **Blood Pressure Analysis**
+- Blood pressure is categorized as **Normal** or **High Blood Pressure** based on:
+  - Systolic (high) pressure >= 140 or
+  - Diastolic (low) pressure >= 90.
+
+### **Routes and Logic**
+1. **Home (`/`)**:
+   - Displays a form for inputting blood pressure values.
+   - Retrieves and displays all past records from the database.
+2. **Submit (`/submit`)**:
+   - Processes user inputs, performs the blood pressure analysis, and saves the results to the database.
+   - Returns a result page with the analysis and a link to go back.
+
+### **Frontend Design**
+- A minimal form is dynamically generated for user inputs.
+- History records are displayed below the form to enhance user experience.
 
 ---
 
@@ -103,12 +139,12 @@ The SQLite database (`data.db`) contains the following table:
 
 1. **Database Not Found**  
    - Ensure the `data.db` file is created during the first run of the application.  
-   - Check the `init_db` function in `tracker.py`.
+   - Check the `init_db` function in `app.py`.
 
 2. **Port Already in Use**  
    - If `127.0.0.1:5000` is unavailable, stop any processes using that port or run the app on a different port:  
      ```bash
-     python tracker.py --port=5001
+     python app.py --port=5001
      ```
 
 3. **Dependencies Not Installed**  
