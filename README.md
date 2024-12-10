@@ -49,7 +49,7 @@ Follow these steps to set up and run the project:
 
 ### 4. Run the Application  
    ```bash
-   python app.py
+   python tracker.py
    ```
 
 ### 5. Access the Application  
@@ -139,12 +139,12 @@ The SQLite database (`data.db`) contains the following table:
 
 1. **Database Not Found**  
    - Ensure the `data.db` file is created during the first run of the application.  
-   - Check the `init_db` function in `app.py`.
+   - Check the `init_db` function in `tracker.py`.
 
 2. **Port Already in Use**  
    - If `127.0.0.1:5000` is unavailable, stop any processes using that port or run the app on a different port:  
      ```bash
-     python app.py --port=5001
+     python tracker.py --port=5001
      ```
 
 3. **Dependencies Not Installed**  
