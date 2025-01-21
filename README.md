@@ -32,7 +32,7 @@ Follow these steps to set up and run the project:
 
 ### 1. Clone the Repository  
    ```bash
-   git clone (https://github.com/henrithm/blood_pressure).git
+   git clone (https://github.com/mindtian/blood_pressure).git
    cd blood_pressure
    ```
 
@@ -174,7 +174,7 @@ This project is licensed under the MIT License. You are free to use, modify, and
 
 If you have any questions or feedback, feel free to reach out:
 
-- **GitHub**: (https://github.com/henrithm/blood_pressure)
+- **GitHub**: (https://github.com/mindtian/blood_pressure)
 
 ---
 
