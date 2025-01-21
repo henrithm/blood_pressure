@@ -174,7 +174,7 @@ This project is licensed under the MIT License. You are free to use, modify, and
 
 If you have any questions or feedback, feel free to reach out:
 
-- **GitHub**: (https://github.com/mindtian/blood_pressure)
+- **GitHub**: https://github.com/mindtian/blood_pressure
 
 ---
 
