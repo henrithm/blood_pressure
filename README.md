@@ -32,8 +32,8 @@ Follow these steps to set up and run the project:
 
 ### 1. Clone the Repository  
    ```bash
-   git clone https://github.com/Henry-THT/BLOOD_PRESSURE.git
-   cd BLOOD_PRESSURE
+   git clone (https://github.com/henrithm/blood_pressure).git
+   cd blood_pressure
    ```
 
 ### 2. Create a Virtual Environment  
